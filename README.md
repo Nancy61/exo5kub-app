@@ -45,11 +45,11 @@
 
 ### **Comment tester le fonctionnement de l'application:**
 <p>1-Téléchargez l'extension Thunder client sur vscode.<br>
-2-Lancez une nouvelle requête en mode POST en saisissant l'url de votre service minikube.<br>
+2-Lancez une nouvelle requête de type POST en saisissant l'url de votre service minikube.<br>
 Exemple: http://localhost:64428/story<br>
-3-Faites un post dans le body du file json. <br>
+3-Faites un post dans le body de type json. <br>
 Exemple: "texte":"je teste l'app".<br>
 4-Enregistrez et envoyez la requête. Vous devez avoir un message comme quoi votre donnée a bien été sauvegardé.<br>
-5-Lancez une nouvelle requête en mode GET en saisissant l'url de votre service minikube et envoyez là. <br>
+5-Lancez une nouvelle requête de type GET en saisissant l'url de votre service minikube et envoyez là. <br>
 Exemple: http://localhost:64428/story<br>
-Vous devez avoir un retour de la valeur.
+Vous devez voir le retour de votre valeur.

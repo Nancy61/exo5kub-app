@@ -1,5 +1,5 @@
 # **DESCRIPTION DU PROJET**
-## **Pour commencer:**
+## **Résumé:**
 ### <p>Ce projet est un exemple de déploiement d'une application node.js via kubernetes.<br></p>
 
 <p><br></p>

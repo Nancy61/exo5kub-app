@@ -13,22 +13,17 @@ spec:
         app: exo5kub-app
     spec:
       volumes: 
-        - name: firstvol-emptydir 
-          emptyDir: 
-            sizeLimit: "500M"
 
         - name: firstvol-hostpath 
           hostPath: 
-            path: /app/story 
+            path: /data 
             type: DirectoryOrCreate 
 
       containers: 
       - name: exo5-app
         volumeMounts:
-          - mountPath: /app/story
-            name: firstvol-emptydir
 
-          - mountPath: /hostpathv-vol
+          - mountPath: /app/story
             name: firstvol-hostpath
 
         image: nancylence/exo5-kub:latest
@@ -36,11 +31,6 @@ spec:
           - name: STORY_FOLDER 
             value: story 
 
-          - name: VAR_REDIRECT
-            valueFrom: 
-              configMapKeyRef: 
-                name: exo5kub-app-configmap 
-                key: VARIABLE_A 
         resources:
           limits:
             memory: "128Mi"

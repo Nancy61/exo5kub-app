@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: exo5kub-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: exo5kub-app
+  ports:
+  - port: 80
+    targetPort: 3000

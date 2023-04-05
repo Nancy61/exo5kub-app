@@ -21,14 +21,14 @@
 
 ### **Comment j'ai push sur Git:**
 <p>1-Créer un nouveau repo public sur mon git<br>
-2-Ensuite j'ai exécuté les commandes suivantes sur mon CMD:</p>
+2-Ensuite j'ai exécuté les commandes suivantes sur mon terminal:</p>
 
 ```bash
-    git clone https://github.com/Nancy61/appdotnet-exo3.git
-#j'ai manuellement rajouter les fichiers de mon app dans le dossier de mon repo créer automatiquement après le clone
+    git init
     git add .
     git commit -m "description"
-    git push
+    git remote add origin https://github.com/Nancy61/exo5kub-app.git
+    git push -f origin main 
 ```
 
 ### **Comment déployer l'application:**

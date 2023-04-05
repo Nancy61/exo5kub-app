@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: exo5kub-app-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: exo5kub-app
+  template:
+    metadata:
+      labels:
+        app: exo5kub-app
+    spec:
+      volumes: 
+        - name: firstvol-emptydir 
+          emptyDir: 
+            sizeLimit: "500M"
+
+        - name: firstvol-hostpath 
+          hostPath: 
+            path: /app/story 
+            type: DirectoryOrCreate 
+
+      containers: 
+      - name: exo5-app
+        volumeMounts:
+          - mountPath: /app/story
+            name: firstvol-emptydir
+
+          - mountPath: /hostpathv-vol
+            name: firstvol-hostpath
+
+        image: nancylence/exo5-kub:latest
+        env: 
+          - name: STORY_FOLDER 
+            value: story 
+
+          - name: VAR_REDIRECT
+            valueFrom: 
+              configMapKeyRef: 
+                name: exo5kub-app-configmap 
+                key: VARIABLE_A 
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
